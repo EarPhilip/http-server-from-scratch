@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/user/Documents/HTTP-Server-from-Scratch/http-server-from-scratch/main'
+relocations:     []
+...
