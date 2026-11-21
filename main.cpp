@@ -27,5 +27,21 @@ int main() {
     }
     std::cout << "Socket bound to 127.0.0.1:8080!!" << std::endl;
 
+
+    if (listen(serverSocket, 10) == -1) {
+        std::perror("Listen failed");
+        close(serverSocket);
+        return 1;
+    }
+    std::cout << "Server listening on port 8080..." << std::endl;
+
+    int clientSocket = accept(serverSocket, nullptr, nullptr);
+    if (clientSocket == -1) {
+        std::perror("Accept failed");
+        close(serverSocket);
+        return 1;
+    }
+    std::cout << "Client connected!" << std::endl;
+
     close(serverSocket);
 }
